@@ -1,0 +1,97 @@
+﻿@model IEnumerable<AdminAPPCORONA.Models.Colaborador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Índice de Colaboradores</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Colaboradores</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Lista de Colaboradores</h5>
+					<div class="ibox-tools">
+						@Html.ActionLink("Agregar Nuevo", "Create", null, new { @class = "btn btn-primary btn-xs"})
+					</div>
+                </div>
+                <div class="ibox-content">
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelPersonal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelOficina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelPersonal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelOficina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+			@Html.ActionLink("Detalles", "Details", new { id=item.IDColaborador }, new { @class = "btn btn-primary btn-sm"})
+            @Html.ActionLink("Editar", "Edit", new { id=item.IDColaborador }, new { @class = "btn btn-white btn-sm"})
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IDColaborador }, new { @class = "btn btn-white btn-sm"})
+        </td>
+    </tr>
+}
+
+</table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+

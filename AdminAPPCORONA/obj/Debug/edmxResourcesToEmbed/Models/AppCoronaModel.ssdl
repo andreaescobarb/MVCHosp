@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APPGPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="APP_Ciudad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APP_Consejos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionConsejo" Type="varchar" MaxLength="500" />
+    <Property Name="Url" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="APP_Noticias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Imagen" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="APP_PINAPI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PIn" Type="varchar" MaxLength="500" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="APP_Sintomas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Sintomas" Type="varchar" MaxLength="500" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="APP_SintomasUsuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefUsuarioId" Type="int" />
+    <Property Name="RefSintomasId" Type="int" />
+    <Property Name="RefPinAPIId" Type="int" />
+  </EntityType>
+  <EntityType Name="APP_Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="500" />
+    <Property Name="Pass" Type="varchar" MaxLength="50" />
+    <Property Name="Nombre" Type="varchar" MaxLength="500" />
+    <Property Name="Identidad" Type="varchar" MaxLength="500" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="RefCiudadId" Type="int" />
+    <Property Name="Direccion" Type="varchar" MaxLength="500" />
+    <Property Name="Latitud" Type="varchar" MaxLength="150" />
+    <Property Name="Longitud" Type="varchar" MaxLength="150" />
+    <Property Name="EstadoEnfermo" Type="int" />
+    <Property Name="RefPINAPIId" Type="int" />
+  </EntityType>
+  <EntityType Name="APP_UuarioLocalizacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefUsuarioId" Type="int" />
+    <Property Name="FechaRegistro" Type="datetime" />
+    <Property Name="Longitud" Type="varchar" MaxLength="150" />
+    <Property Name="Latitud" Type="varchar" MaxLength="150" />
+    <Property Name="RefPINAPIId" Type="int" />
+  </EntityType>
+  <Function Name="APP_F_ListaCiudad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="APP_F_ListaConsejos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DescripcionConsejo" Type="varchar" MaxLength="500" />
+          <Property Name="Url" Type="varchar" MaxLength="500" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="APP_F_ListadoNoticias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Imagen" Type="varbinary(max)" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="APP_F_ListaLocalizacionUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha" Type="date" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="RefUsuarioId" Type="int" />
+          <Property Name="FechaRegistro" Type="datetime" />
+          <Property Name="Longitud" Type="varchar" MaxLength="150" />
+          <Property Name="Latitud" Type="varchar" MaxLength="150" />
+          <Property Name="RefPINAPIId" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="APP_F_ListaSintomas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Sintomas" Type="varchar" MaxLength="500" />
+          <Property Name="Estado" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="APP_P_CrearPINAPI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PIn" Type="varchar" Mode="In" />
+    <Parameter Name="Respuesta" Type="int" Mode="InOut" />
+    <Parameter Name="Mensaje" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="APP_P_CrearPosicionamiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RefUsuarioId" Type="int" Mode="In" />
+    <Parameter Name="FechaRegistro" Type="datetime" Mode="In" />
+    <Parameter Name="Longitud" Type="varchar" Mode="In" />
+    <Parameter Name="Latitud" Type="varchar" Mode="In" />
+    <Parameter Name="RefPINAPIId" Type="int" Mode="In" />
+    <Parameter Name="Respuesta" Type="int" Mode="InOut" />
+    <Parameter Name="Mensaje" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="APP_P_CrearRegistrarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Correo" Type="varchar" Mode="In" />
+    <Parameter Name="Pass" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Identidad" Type="varchar" Mode="In" />
+    <Parameter Name="FechaNacimiento" Type="date" Mode="In" />
+    <Parameter Name="Edad" Type="int" Mode="In" />
+    <Parameter Name="RefCiudadId" Type="int" Mode="In" />
+    <Parameter Name="Direccion" Type="varchar" Mode="In" />
+    <Parameter Name="Latitud" Type="varchar" Mode="In" />
+    <Parameter Name="Longitud" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoEnfermo" Type="int" Mode="In" />
+    <Parameter Name="RefPINAPIId" Type="int" Mode="In" />
+    <Parameter Name="Respuesta" Type="int" Mode="InOut" />
+    <Parameter Name="Mensaje" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="APP_P_GuardarSintomasPorUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RefUsuarioId" Type="int" Mode="In" />
+    <Parameter Name="RefSintomasId" Type="int" Mode="In" />
+    <Parameter Name="RefPinAPIId" Type="int" Mode="In" />
+    <Parameter Name="Respuesta" Type="int" Mode="InOut" />
+    <Parameter Name="Mensaje" Type="varchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="APPGPSModelStoreContainer">
+    <EntitySet Name="APP_Ciudad" EntityType="Self.APP_Ciudad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APP_Consejos" EntityType="Self.APP_Consejos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APP_Noticias" EntityType="Self.APP_Noticias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APP_PINAPI" EntityType="Self.APP_PINAPI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APP_Sintomas" EntityType="Self.APP_Sintomas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APP_SintomasUsuario" EntityType="Self.APP_SintomasUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APP_Usuario" EntityType="Self.APP_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APP_UuarioLocalizacion" EntityType="Self.APP_UuarioLocalizacion" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,115 @@
+﻿@model IEnumerable<AdminAPPCORONA.Models.Medico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Índice de Médicos</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Médicos</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Lista de Médicos</h5>
+					<div class="ibox-tools">
+						@Html.ActionLink("Agregar Médico", "Create", null, new { @class = "btn btn-primary btn-xs"})
+					</div>
+                </div>
+                <div class="ibox-content">
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lunes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Martes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miercoles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jueves)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Viernes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sabado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especialidade.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lunes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Martes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Miercoles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jueves)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Viernes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sabado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Especialidade.Nombre)
+        </td>
+        <td>
+			@Html.ActionLink("Detalles", "Details", new { id=item.IDMedico }, new { @class = "btn btn-primary btn-sm"})
+            @Html.ActionLink("Editar", "Edit", new { id=item.IDMedico }, new { @class = "btn btn-white btn-sm"})
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IDMedico }, new { @class = "btn btn-white btn-sm"})
+        </td>
+    </tr>
+}
+
+</table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+

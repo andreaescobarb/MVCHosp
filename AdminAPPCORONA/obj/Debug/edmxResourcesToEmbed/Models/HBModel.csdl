@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Level" Type="Byte" Nullable="false" />
+    <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cotizaciones" Type="Int32" />
+    <Property Name="Rol" Type="Int32" />
+    <Property Name="Estado" Type="Int32" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="Colaboradores" Relationship="Self.FK_Colaboradores_AspNetUsers" FromRole="AspNetUsers" ToRole="Colaboradores" />
+    <NavigationProperty Name="Medicos" Relationship="Self.FK_Medicos_AspNetUsers" FromRole="AspNetUsers" ToRole="Medicos" />
+    <NavigationProperty Name="Pacientes" Relationship="Self.FK_Pacientes_AspNetUsers" FromRole="AspNetUsers" ToRole="Pacientes" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="Cita">
+    <Key>
+      <PropertyRef Name="IDCita" />
+    </Key>
+    <Property Name="IDCita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="Hora" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IDMedico" Type="Int32" Nullable="false" />
+    <Property Name="IDPaciente" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Paciente" Relationship="Self.FK_Citas_Pacientes" FromRole="Citas" ToRole="Pacientes" />
+  </EntityType>
+  <EntityType Name="Ciudade">
+    <Key>
+      <PropertyRef Name="IDCiudad" />
+    </Key>
+    <Property Name="IDCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Pacientes1" Relationship="Self.FK_Pacientes_Ciudades" FromRole="Ciudades" ToRole="Pacientes" />
+    <NavigationProperty Name="Residencias" Relationship="Self.FK_Residencias_Ciudades" FromRole="Ciudades" ToRole="Residencias" />
+    <NavigationProperty Name="Pacientes" Relationship="HBModel.FK_Paciente_Ciudades" FromRole="Ciudade" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Colaboradore">
+    <Key>
+      <PropertyRef Name="IDColaborador" />
+    </Key>
+    <Property Name="IDColaborador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TelPersonal" Type="Int32" Nullable="false" />
+    <Property Name="TelOficina" Type="Int32" />
+    <Property Name="IDUsuario" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_Colaboradores_AspNetUsers" FromRole="Colaboradores" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="Especialidade">
+    <Key>
+      <PropertyRef Name="IDEspecialidad" />
+    </Key>
+    <Property Name="IDEspecialidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Medicos" Relationship="Self.FK_Medico_Especialidades" FromRole="Especialidades" ToRole="Medico" />
+    <NavigationProperty Name="Medicos1" Relationship="Self.FK_Medicos_Especialidades" FromRole="Especialidades" ToRole="Medicos" />
+  </EntityType>
+  <EntityType Name="ExpedientePaciente">
+    <Key>
+      <PropertyRef Name="IDExpediente" />
+    </Key>
+    <Property Name="IDExpediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Peso" Type="Int32" />
+    <Property Name="ReaccionesAlergicas" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PresionArterial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IDPaciente" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Paciente" Relationship="Self.FK_ExpedientePaciente_Pacientes" FromRole="ExpedientePaciente" ToRole="Pacientes" />
+  </EntityType>
+  <EntityType Name="Medico">
+    <Key>
+      <PropertyRef Name="IDMedico" />
+    </Key>
+    <Property Name="IDMedico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lunes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Martes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Miercoles" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Jueves" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Viernes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sabado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Titulos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDEspecialidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Especialidade" Relationship="Self.FK_Medico_Especialidades" FromRole="Medico" ToRole="Especialidades" />
+  </EntityType>
+  <EntityType Name="Medico1">
+    <Key>
+      <PropertyRef Name="IDMedico" />
+    </Key>
+    <Property Name="IDMedico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lunes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Martes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Miercoles" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Jueves" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Viernes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sabado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Titulos" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IDEspecialidad" Type="Int32" Nullable="false" />
+    <Property Name="IDUser" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_Medicos_AspNetUsers" FromRole="Medicos" ToRole="AspNetUsers" />
+    <NavigationProperty Name="Especialidade" Relationship="Self.FK_Medicos_Especialidades" FromRole="Medicos" ToRole="Especialidades" />
+  </EntityType>
+  <EntityType Name="Nacionalidad">
+    <Key>
+      <PropertyRef Name="IDNacionalidad" />
+    </Key>
+    <Property Name="IDNacionalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Pacientes1" Relationship="Self.FK_Pacientes_Nacionalidad" FromRole="Nacionalidad" ToRole="Pacientes" />
+    <NavigationProperty Name="Pacientes" Relationship="HBModel.FK_Paciente_Nacionalidad" FromRole="Nacionalidad" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Pacientes">
+    <Key>
+      <PropertyRef Name="IDPaciente" />
+    </Key>
+    <Property Name="IDPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Identidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Edad" Type="Int32" Nullable="false" />
+    <Property Name="Genero" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDNacionalidad" Type="Int32" />
+    <Property Name="Ciudad" Type="Int32" />
+    <Property Name="Residencia" Type="Int32" />
+    <Property Name="IDUser" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_Pacientes_AspNetUsers" FromRole="Pacientes" ToRole="AspNetUsers" />
+    <NavigationProperty Name="Citas" Relationship="Self.FK_Citas_Pacientes" FromRole="Pacientes" ToRole="Citas" />
+    <NavigationProperty Name="Ciudade" Relationship="Self.FK_Pacientes_Ciudades" FromRole="Pacientes" ToRole="Ciudades" />
+    <NavigationProperty Name="ExpedientePacientes" Relationship="Self.FK_ExpedientePaciente_Pacientes" FromRole="Pacientes" ToRole="ExpedientePaciente" />
+    <NavigationProperty Name="Nacionalidad" Relationship="Self.FK_Pacientes_Nacionalidad" FromRole="Pacientes" ToRole="Nacionalidad" />
+    <NavigationProperty Name="Residencia1" Relationship="Self.FK_Pacientes_Residencias" FromRole="Pacientes" ToRole="Residencias" />
+  </EntityType>
+  <EntityType Name="Promocione">
+    <Key>
+      <PropertyRef Name="IDPromocion" />
+    </Key>
+    <Property Name="IDPromocion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Detalle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FechaExpiracion" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ServiciosEnPromocions" Relationship="Self.FK_ServiciosEnPromocion_Promociones" FromRole="Promociones" ToRole="ServiciosEnPromocion" />
+  </EntityType>
+  <EntityType Name="Residencia">
+    <Key>
+      <PropertyRef Name="IDResidencia" />
+    </Key>
+    <Property Name="IDResidencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDCiudad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ciudade" Relationship="Self.FK_Residencias_Ciudades" FromRole="Residencias" ToRole="Ciudades" />
+    <NavigationProperty Name="Pacientes1" Relationship="Self.FK_Pacientes_Residencias" FromRole="Residencias" ToRole="Pacientes" />
+    <NavigationProperty Name="Pacientes" Relationship="HBModel.FK_Paciente_Residencias" FromRole="Residencia" ToRole="Paciente" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="IDServicio" />
+    </Key>
+    <Property Name="IDServicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Precio" Type="Double" />
+    <Property Name="Recomendaciones" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Contraindicaciones" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Advertencias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ServiciosEnPromocions" Relationship="Self.FK_ServiciosEnPromocion_Servicios" FromRole="Servicios" ToRole="ServiciosEnPromocion" />
+  </EntityType>
+  <EntityType Name="ServiciosEnPromocion">
+    <Key>
+      <PropertyRef Name="IDServiciosPromocion" />
+    </Key>
+    <Property Name="IDServiciosPromocion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrecioFinal" Type="Double" Nullable="false" />
+    <Property Name="IDPromocion" Type="Int32" Nullable="false" />
+    <Property Name="IDServicio" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Promocione" Relationship="Self.FK_ServiciosEnPromocion_Promociones" FromRole="ServiciosEnPromocion" ToRole="Promociones" />
+    <NavigationProperty Name="Servicio" Relationship="Self.FK_ServiciosEnPromocion_Servicios" FromRole="ServiciosEnPromocion" ToRole="Servicios" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IDUsers" />
+    </Key>
+    <Property Name="IDUsers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Cotizaciones" Type="Int32" Nullable="false" />
+    <Property Name="Rol" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Colaboradores_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="Colaboradores" Type="Self.Colaboradore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colaboradores">
+        <PropertyRef Name="IDUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medicos_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="Medicos" Type="Self.Medico1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medicos">
+        <PropertyRef Name="IDUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="Pacientes" Type="HBModel.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="IDUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Citas_Pacientes">
+    <End Role="Pacientes" Type="HBModel.Pacientes" Multiplicity="1" />
+    <End Role="Citas" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="IDPaciente" />
+      </Principal>
+      <Dependent Role="Citas">
+        <PropertyRef Name="IDPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_Ciudades">
+    <End Role="Ciudades" Type="Self.Ciudade" Multiplicity="0..1" />
+    <End Role="Pacientes" Type="HBModel.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="IDCiudad" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="Ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Residencias_Ciudades">
+    <End Role="Ciudades" Type="Self.Ciudade" Multiplicity="1" />
+    <End Role="Residencias" Type="Self.Residencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="IDCiudad" />
+      </Principal>
+      <Dependent Role="Residencias">
+        <PropertyRef Name="IDCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medico_Especialidades">
+    <End Role="Especialidades" Type="Self.Especialidade" Multiplicity="1" />
+    <End Role="Medico" Type="Self.Medico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidades">
+        <PropertyRef Name="IDEspecialidad" />
+      </Principal>
+      <Dependent Role="Medico">
+        <PropertyRef Name="IDEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medicos_Especialidades">
+    <End Role="Especialidades" Type="Self.Especialidade" Multiplicity="1" />
+    <End Role="Medicos" Type="Self.Medico1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidades">
+        <PropertyRef Name="IDEspecialidad" />
+      </Principal>
+      <Dependent Role="Medicos">
+        <PropertyRef Name="IDEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExpedientePaciente_Pacientes">
+    <End Role="Pacientes" Type="HBModel.Pacientes" Multiplicity="1" />
+    <End Role="ExpedientePaciente" Type="Self.ExpedientePaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="IDPaciente" />
+      </Principal>
+      <Dependent Role="ExpedientePaciente">
+        <PropertyRef Name="IDPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_Nacionalidad">
+    <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="0..1" />
+    <End Role="Pacientes" Type="HBModel.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nacionalidad">
+        <PropertyRef Name="IDNacionalidad" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="IDNacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_Residencias">
+    <End Role="Residencias" Type="Self.Residencia" Multiplicity="0..1" />
+    <End Role="Pacientes" Type="HBModel.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Residencias">
+        <PropertyRef Name="IDResidencia" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="Residencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiciosEnPromocion_Promociones">
+    <End Role="Promociones" Type="Self.Promocione" Multiplicity="1" />
+    <End Role="ServiciosEnPromocion" Type="Self.ServiciosEnPromocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promociones">
+        <PropertyRef Name="IDPromocion" />
+      </Principal>
+      <Dependent Role="ServiciosEnPromocion">
+        <PropertyRef Name="IDPromocion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiciosEnPromocion_Servicios">
+    <End Role="Servicios" Type="Self.Servicio" Multiplicity="1" />
+    <End Role="ServiciosEnPromocion" Type="Self.ServiciosEnPromocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicios">
+        <PropertyRef Name="IDServicio" />
+      </Principal>
+      <Dependent Role="ServiciosEnPromocion">
+        <PropertyRef Name="IDServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="HBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="Citas" EntityType="Self.Cita" />
+    <EntitySet Name="Ciudades" EntityType="Self.Ciudade" />
+    <EntitySet Name="Colaboradores" EntityType="Self.Colaboradore" />
+    <EntitySet Name="Especialidades" EntityType="Self.Especialidade" />
+    <EntitySet Name="ExpedientePacientes" EntityType="Self.ExpedientePaciente" />
+    <EntitySet Name="Medicos" EntityType="Self.Medico" />
+    <EntitySet Name="Medicos1" EntityType="Self.Medico1" />
+    <EntitySet Name="Nacionalidads" EntityType="Self.Nacionalidad" />
+    <EntitySet Name="Pacientes1" EntityType="HBModel.Pacientes" />
+    <EntitySet Name="Promociones" EntityType="Self.Promocione" />
+    <EntitySet Name="Residencias" EntityType="Self.Residencia" />
+    <EntitySet Name="Servicios" EntityType="Self.Servicio" />
+    <EntitySet Name="ServiciosEnPromocions" EntityType="Self.ServiciosEnPromocion" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Colaboradores_AspNetUsers" Association="Self.FK_Colaboradores_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Colaboradores" EntitySet="Colaboradores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medicos_AspNetUsers" Association="Self.FK_Medicos_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Medicos" EntitySet="Medicos1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_AspNetUsers" Association="Self.FK_Pacientes_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Pacientes" EntitySet="Pacientes1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Citas_Pacientes" Association="Self.FK_Citas_Pacientes">
+      <End Role="Pacientes" EntitySet="Pacientes1" />
+      <End Role="Citas" EntitySet="Citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_Ciudades" Association="Self.FK_Pacientes_Ciudades">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Pacientes" EntitySet="Pacientes1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Residencias_Ciudades" Association="Self.FK_Residencias_Ciudades">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Residencias" EntitySet="Residencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medico_Especialidades" Association="Self.FK_Medico_Especialidades">
+      <End Role="Especialidades" EntitySet="Especialidades" />
+      <End Role="Medico" EntitySet="Medicos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medicos_Especialidades" Association="Self.FK_Medicos_Especialidades">
+      <End Role="Especialidades" EntitySet="Especialidades" />
+      <End Role="Medicos" EntitySet="Medicos1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpedientePaciente_Pacientes" Association="Self.FK_ExpedientePaciente_Pacientes">
+      <End Role="Pacientes" EntitySet="Pacientes1" />
+      <End Role="ExpedientePaciente" EntitySet="ExpedientePacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_Nacionalidad" Association="Self.FK_Pacientes_Nacionalidad">
+      <End Role="Nacionalidad" EntitySet="Nacionalidads" />
+      <End Role="Pacientes" EntitySet="Pacientes1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_Residencias" Association="Self.FK_Pacientes_Residencias">
+      <End Role="Residencias" EntitySet="Residencias" />
+      <End Role="Pacientes" EntitySet="Pacientes1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiciosEnPromocion_Promociones" Association="Self.FK_ServiciosEnPromocion_Promociones">
+      <End Role="Promociones" EntitySet="Promociones" />
+      <End Role="ServiciosEnPromocion" EntitySet="ServiciosEnPromocions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiciosEnPromocion_Servicios" Association="Self.FK_ServiciosEnPromocion_Servicios">
+      <End Role="Servicios" EntitySet="Servicios" />
+      <End Role="ServiciosEnPromocion" EntitySet="ServiciosEnPromocions" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="CitaEspecifica" ReturnType="Collection(HBModel.CitaEspecifica_Result)">
+      <Parameter Name="idcita" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ColaboradorEspecifico" ReturnType="Collection(HBModel.ColaboradorEspecifico_Result)">
+      <Parameter Name="idcolaborador" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CreatePacientes">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="sapellido" Mode="In" Type="String" />
+      <Parameter Name="identidad" Mode="In" Type="String" />
+      <Parameter Name="edad" Mode="In" Type="Int32" />
+      <Parameter Name="genero" Mode="In" Type="String" />
+      <Parameter Name="nacionalidad" Mode="In" Type="Int32" />
+      <Parameter Name="ciudad" Mode="In" Type="Int32" />
+      <Parameter Name="residencia" Mode="In" Type="Int32" />
+      <Parameter Name="iduser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CreateUser">
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="cotizaciones" Mode="In" Type="Int32" />
+      <Parameter Name="rol" Mode="In" Type="Int32" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getCitas" ReturnType="Collection(HBModel.getCitas_Result)" />
+    <FunctionImport Name="getCitasM" ReturnType="Collection(HBModel.getCitasM_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getCitasP" ReturnType="Collection(HBModel.getCitasP_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getCiudades" ReturnType="Collection(HBModel.getCiudades_Result)" />
+    <FunctionImport Name="getColaboradores" ReturnType="Collection(HBModel.getColaboradores_Result)" />
+    <FunctionImport Name="getEspecialidad" ReturnType="Collection(HBModel.getEspecialidad_Result)" />
+    <FunctionImport Name="getEspecialidadEspecifica" ReturnType="Collection(HBModel.getEspecialidadEspecifica_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getExpediente" ReturnType="Collection(HBModel.getExpediente_Result)" />
+    <FunctionImport Name="getExpedientePaciente" ReturnType="Collection(HBModel.getExpedientePaciente_Result)">
+      <Parameter Name="IDExpediente" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getMedicoEspecifico" ReturnType="Collection(HBModel.getMedicoEspecifico_Result)">
+      <Parameter Name="idmedico" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getMedicos" ReturnType="Collection(HBModel.getMedicos_Result)" />
+    <FunctionImport Name="getMedicosE" ReturnType="Collection(HBModel.getMedicosE_Result)">
+      <Parameter Name="idespecialidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getNacionalidad" ReturnType="Collection(HBModel.getNacionalidad_Result)" />
+    <FunctionImport Name="getPacientes" ReturnType="Collection(HBModel.getPacientes_Result)" />
+    <FunctionImport Name="getPacienteUsuario" ReturnType="Collection(HBModel.getPacienteUsuario_Result)">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getPromociones" ReturnType="Collection(HBModel.getPromociones_Result)" />
+    <FunctionImport Name="getResidencias" ReturnType="Collection(HBModel.getResidencias_Result)" />
+    <FunctionImport Name="getResidenciasE" ReturnType="Collection(HBModel.getResidenciasE_Result)">
+      <Parameter Name="idCiudad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getServicios" ReturnType="Collection(HBModel.getServicios_Result)" />
+    <FunctionImport Name="getServiciosenPromocion" ReturnType="Collection(HBModel.getServiciosenPromocion_Result)" />
+    <FunctionImport Name="PacienteEspecifico" ReturnType="Collection(HBModel.PacienteEspecifico_Result)">
+      <Parameter Name="idpaciente" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PromocionEspecifica" ReturnType="Collection(HBModel.PromocionEspecifica_Result)">
+      <Parameter Name="IDPromocion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ServicioEspecifico" ReturnType="Collection(HBModel.ServicioEspecifico_Result)">
+      <Parameter Name="IDServicio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="SPEspecifico" ReturnType="Collection(HBModel.SPEspecifico_Result)">
+      <Parameter Name="idsp" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Pacientes" EntityType="HBModel.Paciente" />
+    <AssociationSet Name="FK_Paciente_Ciudades" Association="HBModel.FK_Paciente_Ciudades">
+      <End Role="Ciudade" EntitySet="Ciudades" />
+      <End Role="Paciente" EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paciente_Nacionalidad" Association="HBModel.FK_Paciente_Nacionalidad">
+      <End Role="Nacionalidad" EntitySet="Nacionalidads" />
+      <End Role="Paciente" EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paciente_Residencias" Association="HBModel.FK_Paciente_Residencias">
+      <End Role="Residencia" EntitySet="Residencias" />
+      <End Role="Paciente" EntitySet="Pacientes" />
+    </AssociationSet>
+    <EntitySet Name="Colaboradors" EntityType="HBModel.Colaborador" />
+  </EntityContainer>
+  <ComplexType Name="CitaEspecifica_Result">
+    <Property Type="Int32" Name="IDCita" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="Hora" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IDMedico" Nullable="false" />
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ColaboradorEspecifico_Result">
+    <Property Type="Int32" Name="IDColaborador" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Cargo" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TelPersonal" Nullable="false" />
+    <Property Type="Int32" Name="TelOficina" Nullable="true" />
+    <Property Type="String" Name="IDUsuario" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="getCitas_Result">
+    <Property Type="Int32" Name="IDCita" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="Hora" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IDMedico" Nullable="false" />
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getCitasM_Result">
+    <Property Type="Int32" Name="IDCita" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="Hora" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IDMedico" Nullable="false" />
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getCitasP_Result">
+    <Property Type="Int32" Name="IDCita" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="Hora" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IDMedico" Nullable="false" />
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getCiudades_Result">
+    <Property Type="Int32" Name="IDCiudad" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getColaboradores_Result">
+    <Property Type="Int32" Name="IDColaborador" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Cargo" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TelPersonal" Nullable="false" />
+    <Property Type="Int32" Name="TelOficina" Nullable="true" />
+    <Property Type="String" Name="IDUsuario" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="getEspecialidad_Result">
+    <Property Type="Int32" Name="IDEspecialidad" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getEspecialidadEspecifica_Result">
+    <Property Type="Int32" Name="IDEspecialidad" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getExpediente_Result">
+    <Property Type="Int32" Name="IDExpediente" Nullable="false" />
+    <Property Type="Int32" Name="Peso" Nullable="true" />
+    <Property Type="String" Name="ReaccionesAlergicas" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PresionArterial" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Observaciones" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getExpedientePaciente_Result">
+    <Property Type="Int32" Name="IDExpediente" Nullable="false" />
+    <Property Type="Int32" Name="Peso" Nullable="true" />
+    <Property Type="String" Name="ReaccionesAlergicas" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PresionArterial" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Observaciones" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getMedicoEspecifico_Result">
+    <Property Type="Int32" Name="IDMedico" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Lunes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Martes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Miercoles" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Jueves" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Viernes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Sabado" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Titulos" Nullable="true" MaxLength="200" />
+    <Property Type="Binary" Name="Img" Nullable="true" />
+    <Property Type="Int32" Name="IDEspecialidad" Nullable="false" />
+    <Property Type="String" Name="IDUser" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="getMedicos_Result">
+    <Property Type="Int32" Name="IDMedico" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Lunes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Martes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Miercoles" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Jueves" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Viernes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Sabado" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Titulos" Nullable="true" MaxLength="200" />
+    <Property Type="Binary" Name="Img" Nullable="true" />
+    <Property Type="Int32" Name="IDEspecialidad" Nullable="false" />
+    <Property Type="String" Name="IDUser" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="getMedicosE_Result">
+    <Property Type="Int32" Name="IDMedico" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Lunes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Martes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Miercoles" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Jueves" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Viernes" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Sabado" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Titulos" Nullable="true" MaxLength="200" />
+    <Property Type="Binary" Name="Img" Nullable="true" />
+    <Property Type="Int32" Name="IDEspecialidad" Nullable="false" />
+    <Property Type="String" Name="IDUser" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="getNacionalidad_Result">
+    <Property Type="Int32" Name="IDNacionalidad" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getPacientes_Result">
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Identidad" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Edad" Nullable="false" />
+    <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="IDNacionalidad" Nullable="true" />
+    <Property Type="Int32" Name="Ciudad" Nullable="true" />
+    <Property Type="Int32" Name="Residencia" Nullable="true" />
+    <Property Type="String" Name="IDUser" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="getPacienteUsuario_Result">
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Identidad" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Edad" Nullable="false" />
+    <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="IDNacionalidad" Nullable="true" />
+    <Property Type="Int32" Name="Ciudad" Nullable="true" />
+    <Property Type="Int32" Name="Residencia" Nullable="true" />
+    <Property Type="String" Name="IDUser" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="getPromociones_Result">
+    <Property Type="Int32" Name="IDPromocion" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="Detalle" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="FechaExpiracion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getResidencias_Result">
+    <Property Type="Int32" Name="IDResidencia" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="70" />
+    <Property Type="Int32" Name="IDCiudad" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getResidenciasE_Result">
+    <Property Type="Int32" Name="IDResidencia" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="70" />
+    <Property Type="Int32" Name="IDCiudad" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getServicios_Result">
+    <Property Type="Int32" Name="IDServicio" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="70" />
+    <Property Type="Double" Name="Precio" Nullable="true" />
+    <Property Type="String" Name="Recomendaciones" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Contraindicaciones" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Advertencias" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getServiciosenPromocion_Result">
+    <Property Type="Int32" Name="IDServiciosPromocion" Nullable="false" />
+    <Property Type="Double" Name="PrecioFinal" Nullable="false" />
+    <Property Type="Int32" Name="IDPromocion" Nullable="false" />
+    <Property Type="Int32" Name="IDServicio" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="PacienteEspecifico_Result">
+    <Property Type="Int32" Name="IDPaciente" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Identidad" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Edad" Nullable="false" />
+    <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="IDNacionalidad" Nullable="true" />
+    <Property Type="Int32" Name="Ciudad" Nullable="true" />
+    <Property Type="Int32" Name="Residencia" Nullable="true" />
+    <Property Type="String" Name="IDUser" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="PromocionEspecifica_Result">
+    <Property Type="Int32" Name="IDPromocion" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="Detalle" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="FechaExpiracion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ServicioEspecifico_Result">
+    <Property Type="Int32" Name="IDServicio" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="70" />
+    <Property Type="Double" Name="Precio" Nullable="true" />
+    <Property Type="String" Name="Recomendaciones" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Contraindicaciones" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Advertencias" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SPEspecifico_Result">
+    <Property Type="Int32" Name="IDServiciosPromocion" Nullable="false" />
+    <Property Type="Double" Name="PrecioFinal" Nullable="false" />
+    <Property Type="Int32" Name="IDPromocion" Nullable="false" />
+    <Property Type="Int32" Name="IDServicio" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="IDPaciente" />
+    </Key>
+    <Property Name="IDPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SegundoApellido" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Identidad" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="Int32" Nullable="false" />
+    <Property Name="Genero" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="IDNacionalidad" Type="Int32" Nullable="false" />
+    <Property Name="Ciudad" Type="Int32" Nullable="false" />
+    <Property Name="Residencia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ciudade" Relationship="HBModel.FK_Paciente_Ciudades" FromRole="Paciente" ToRole="Ciudade" />
+    <NavigationProperty Name="Nacionalidad" Relationship="HBModel.FK_Paciente_Nacionalidad" FromRole="Paciente" ToRole="Nacionalidad" />
+    <NavigationProperty Name="Residencia1" Relationship="HBModel.FK_Paciente_Residencias" FromRole="Paciente" ToRole="Residencia" />
+  </EntityType>
+  <Association Name="FK_Paciente_Ciudades">
+    <End Type="HBModel.Ciudade" Role="Ciudade" Multiplicity="1" />
+    <End Type="HBModel.Paciente" Role="Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudade">
+        <PropertyRef Name="IDCiudad" />
+      </Principal>
+      <Dependent Role="Paciente">
+        <PropertyRef Name="Ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paciente_Nacionalidad">
+    <End Type="HBModel.Nacionalidad" Role="Nacionalidad" Multiplicity="1" />
+    <End Type="HBModel.Paciente" Role="Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nacionalidad">
+        <PropertyRef Name="IDNacionalidad" />
+      </Principal>
+      <Dependent Role="Paciente">
+        <PropertyRef Name="IDNacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paciente_Residencias">
+    <End Type="HBModel.Residencia" Role="Residencia" Multiplicity="1" />
+    <End Type="HBModel.Paciente" Role="Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Residencia">
+        <PropertyRef Name="IDResidencia" />
+      </Principal>
+      <Dependent Role="Paciente">
+        <PropertyRef Name="Residencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Colaborador">
+    <Key>
+      <PropertyRef Name="IDColaborador" />
+    </Key>
+    <Property Name="IDColaborador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Cargo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TelPersonal" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="TelOficina" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

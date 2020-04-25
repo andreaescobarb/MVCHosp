@@ -1,0 +1,73 @@
+﻿@model IEnumerable<AdminAPPCORONA.Models.ServiciosEnPromocion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Indice de Servicios en Promoción</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Servicios En Promoción</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Lista de Servicios En Promoción</h5>
+					<div class="ibox-tools">
+						@Html.ActionLink("Crear nuevo", "Create", null, new { @class = "btn btn-primary btn-xs"})
+					</div>
+                </div>
+                <div class="ibox-content">
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Promocione.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servicio.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Promocione.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servicio.Nombre)
+        </td>
+        <td>
+			@Html.ActionLink("Detalles", "Details", new { id=item.IDServiciosPromocion }, new { @class = "btn btn-primary btn-sm"})
+            @Html.ActionLink("Editar", "Edit", new { id=item.IDServiciosPromocion }, new { @class = "btn btn-white btn-sm"})
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IDServiciosPromocion }, new { @class = "btn btn-white btn-sm"})
+        </td>
+    </tr>
+}
+
+</table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+

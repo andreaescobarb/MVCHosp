@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APPGPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="APP_F_ListaCiudad_Result">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="APP_F_ListaConsejos_Result">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="DescripcionConsejo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="APP_F_ListadoNoticias_Result">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </ComplexType>
+  <ComplexType Name="APP_F_ListaLocalizacionUsuario_Result">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RefUsuarioId" Type="Int32" />
+    <Property Name="FechaRegistro" Type="DateTime" />
+    <Property Name="Longitud" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Latitud" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="RefPINAPIId" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="APP_F_ListaSintomas_Result">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Sintomas" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+  </ComplexType>
+  <EntityType Name="APP_Ciudad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="APP_Consejos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescripcionConsejo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="APP_Noticias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="APP_PINAPI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PIn" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="APP_Sintomas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Sintomas" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+  </EntityType>
+  <EntityType Name="APP_SintomasUsuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefUsuarioId" Type="Int32" />
+    <Property Name="RefSintomasId" Type="Int32" />
+    <Property Name="RefPinAPIId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="APP_Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Correo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Identidad" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+    <Property Name="Edad" Type="Int32" />
+    <Property Name="RefCiudadId" Type="Int32" />
+    <Property Name="Direccion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Latitud" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Longitud" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoEnfermo" Type="Int32" />
+    <Property Name="RefPINAPIId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="APP_UuarioLocalizacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefUsuarioId" Type="Int32" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="Longitud" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Latitud" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="RefPINAPIId" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="APPGPSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APP_Ciudad" EntityType="Self.APP_Ciudad" />
+    <EntitySet Name="APP_Consejos" EntityType="Self.APP_Consejos" />
+    <EntitySet Name="APP_Noticias" EntityType="Self.APP_Noticias" />
+    <EntitySet Name="APP_PINAPI" EntityType="Self.APP_PINAPI" />
+    <EntitySet Name="APP_Sintomas" EntityType="Self.APP_Sintomas" />
+    <EntitySet Name="APP_SintomasUsuario" EntityType="Self.APP_SintomasUsuario" />
+    <EntitySet Name="APP_Usuario" EntityType="Self.APP_Usuario" />
+    <EntitySet Name="APP_UuarioLocalizacion" EntityType="Self.APP_UuarioLocalizacion" />
+    <FunctionImport Name="APP_F_ListaCiudad" IsComposable="true" ReturnType="Collection(APPGPSModel.APP_F_ListaCiudad_Result)" />
+    <FunctionImport Name="APP_F_ListaConsejos" IsComposable="true" ReturnType="Collection(APPGPSModel.APP_F_ListaConsejos_Result)" />
+    <FunctionImport Name="APP_F_ListadoNoticias" IsComposable="true" ReturnType="Collection(APPGPSModel.APP_F_ListadoNoticias_Result)" />
+    <FunctionImport Name="APP_F_ListaLocalizacionUsuario" IsComposable="true" ReturnType="Collection(APPGPSModel.APP_F_ListaLocalizacionUsuario_Result)">
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="APP_F_ListaSintomas" IsComposable="true" ReturnType="Collection(APPGPSModel.APP_F_ListaSintomas_Result)" />
+    <FunctionImport Name="APP_P_CrearPINAPI">
+      <Parameter Name="PIn" Mode="In" Type="String" />
+      <Parameter Name="Respuesta" Mode="InOut" Type="Int32" />
+      <Parameter Name="Mensaje" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="APP_P_CrearPosicionamiento">
+      <Parameter Name="RefUsuarioId" Mode="In" Type="Int32" />
+      <Parameter Name="FechaRegistro" Mode="In" Type="DateTime" />
+      <Parameter Name="Longitud" Mode="In" Type="String" />
+      <Parameter Name="Latitud" Mode="In" Type="String" />
+      <Parameter Name="RefPINAPIId" Mode="In" Type="Int32" />
+      <Parameter Name="Respuesta" Mode="InOut" Type="Int32" />
+      <Parameter Name="Mensaje" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="APP_P_CrearRegistrarUsuario">
+      <Parameter Name="Correo" Mode="In" Type="String" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Identidad" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="Edad" Mode="In" Type="Int32" />
+      <Parameter Name="RefCiudadId" Mode="In" Type="Int32" />
+      <Parameter Name="Direccion" Mode="In" Type="String" />
+      <Parameter Name="Latitud" Mode="In" Type="String" />
+      <Parameter Name="Longitud" Mode="In" Type="String" />
+      <Parameter Name="EstadoEnfermo" Mode="In" Type="Int32" />
+      <Parameter Name="RefPINAPIId" Mode="In" Type="Int32" />
+      <Parameter Name="Respuesta" Mode="InOut" Type="Int32" />
+      <Parameter Name="Mensaje" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="APP_P_GuardarSintomasPorUsuario">
+      <Parameter Name="RefUsuarioId" Mode="In" Type="Int32" />
+      <Parameter Name="RefSintomasId" Mode="In" Type="Int32" />
+      <Parameter Name="RefPinAPIId" Mode="In" Type="Int32" />
+      <Parameter Name="Respuesta" Mode="InOut" Type="Int32" />
+      <Parameter Name="Mensaje" Mode="InOut" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

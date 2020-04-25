@@ -1,0 +1,204 @@
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\AdminAPPCORONA.dll.config
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\AdminAPPCORONA.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\AdminAPPCORONA.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Antlr3.Runtime.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\EntityFramework.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\EntityFramework.SqlServer.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Newtonsoft.Json.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Helpers.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Mvc.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Optimization.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Razor.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Deployment.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.WebPages.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Razor.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\WebGrease.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\EntityFramework.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\EntityFramework.SqlServer.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Newtonsoft.Json.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Helpers.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Mvc.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Optimization.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.Razor.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.WebPages.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Deployment.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Razor.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Antlr3.Runtime.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\obj\Release\HOSPBAPP.csprojAssemblyReference.cache
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\obj\Release\HOSPBAPP.csproj.CoreCompileInputs.cache
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\obj\Release\HOSPBAPP.csproj.CopyComplete
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\obj\Release\AdminAPPCORONA.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBCOPIAESTABLE - Copy\AdminAPPCORONA\obj\Release\AdminAPPCORONA.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\AdminAPPCORONA.dll.config
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\AdminAPPCORONA.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\AdminAPPCORONA.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Antlr3.Runtime.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\EntityFramework.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\EntityFramework.SqlServer.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Newtonsoft.Json.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Helpers.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Mvc.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Optimization.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Razor.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.WebPages.Deployment.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.WebPages.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.WebPages.Razor.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\WebGrease.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\EntityFramework.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\EntityFramework.SqlServer.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Newtonsoft.Json.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Helpers.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Mvc.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Optimization.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.Razor.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.WebPages.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.WebPages.Deployment.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\System.Web.WebPages.Razor.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Antlr3.Runtime.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\obj\Release\HOSPBAPP.csprojAssemblyReference.cache
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\obj\Release\HOSPBAPP.csproj.CoreCompileInputs.cache
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\obj\Release\HOSPBAPP.csproj.CopyComplete
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\obj\Release\AdminAPPCORONA.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPP\AdminAPPCORONA\obj\Release\AdminAPPCORONA.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\AdminAPPCORONA.dll.config
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\AdminAPPCORONA.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\AdminAPPCORONA.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Antlr3.Runtime.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\EntityFramework.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\EntityFramework.SqlServer.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.AWT.WinForms.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Beans.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Charsets.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Cldrdata.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Corba.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Core.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Jdbc.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Localedata.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Management.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Media.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Misc.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Naming.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Nashorn.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Remoting.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Security.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.SwingAWT.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Text.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Tools.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.Util.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.XML.API.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.XML.Bind.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.XML.Crypto.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.XML.Parse.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.XML.Transform.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.XML.WebServices.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.OpenJDK.XML.XPath.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.Runtime.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\IKVM.Runtime.JNI.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Newtonsoft.Json.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Owin.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Helpers.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Mvc.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Optimization.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Razor.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Deployment.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.WebPages.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Razor.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\WebGrease.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\xunit.abstractions.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\xunit.core.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\EntityFramework.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\EntityFramework.SqlServer.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Newtonsoft.Json.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Helpers.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Mvc.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Optimization.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.Razor.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.WebPages.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Deployment.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\System.Web.WebPages.Razor.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Antlr3.Runtime.pdb
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\xunit.abstractions.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\xunit.core.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\obj\Release\HOSPBAPP.csprojAssemblyReference.cache
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\obj\Release\HOSPBAPP.csproj.CoreCompileInputs.cache
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\obj\Release\HOSPBAPP.csproj.CopyComplete
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\obj\Release\AdminAPPCORONA.dll
+C:\Users\andre\Documents\spicyrocket\HOSPBAPPCOPIA - Copy\AdminAPPCORONA\obj\Release\AdminAPPCORONA.pdb

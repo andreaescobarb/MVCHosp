@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APPGPSModelStoreContainer" CdmEntityContainer="APPGPSEntities">
+    <EntitySetMapping Name="APP_Ciudad">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_Ciudad">
+        <MappingFragment StoreEntitySet="APP_Ciudad">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_Consejos">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_Consejos">
+        <MappingFragment StoreEntitySet="APP_Consejos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DescripcionConsejo" ColumnName="DescripcionConsejo" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_Noticias">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_Noticias">
+        <MappingFragment StoreEntitySet="APP_Noticias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_PINAPI">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_PINAPI">
+        <MappingFragment StoreEntitySet="APP_PINAPI">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PIn" ColumnName="PIn" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_Sintomas">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_Sintomas">
+        <MappingFragment StoreEntitySet="APP_Sintomas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sintomas" ColumnName="Sintomas" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_SintomasUsuario">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_SintomasUsuario">
+        <MappingFragment StoreEntitySet="APP_SintomasUsuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RefUsuarioId" ColumnName="RefUsuarioId" />
+          <ScalarProperty Name="RefSintomasId" ColumnName="RefSintomasId" />
+          <ScalarProperty Name="RefPinAPIId" ColumnName="RefPinAPIId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_Usuario">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_Usuario">
+        <MappingFragment StoreEntitySet="APP_Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Identidad" ColumnName="Identidad" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="RefCiudadId" ColumnName="RefCiudadId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="EstadoEnfermo" ColumnName="EstadoEnfermo" />
+          <ScalarProperty Name="RefPINAPIId" ColumnName="RefPINAPIId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_UuarioLocalizacion">
+      <EntityTypeMapping TypeName="APPGPSModel.APP_UuarioLocalizacion">
+        <MappingFragment StoreEntitySet="APP_UuarioLocalizacion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RefUsuarioId" ColumnName="RefUsuarioId" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="RefPINAPIId" ColumnName="RefPINAPIId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="APPGPSModel.Store.APP_F_ListaCiudad" FunctionImportName="APP_F_ListaCiudad">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APPGPSModel.APP_F_ListaCiudad_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="APPGPSModel.Store.APP_F_ListaConsejos" FunctionImportName="APP_F_ListaConsejos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APPGPSModel.APP_F_ListaConsejos_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DescripcionConsejo" ColumnName="DescripcionConsejo" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="APPGPSModel.Store.APP_F_ListadoNoticias" FunctionImportName="APP_F_ListadoNoticias">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APPGPSModel.APP_F_ListadoNoticias_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="APPGPSModel.Store.APP_F_ListaLocalizacionUsuario" FunctionImportName="APP_F_ListaLocalizacionUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APPGPSModel.APP_F_ListaLocalizacionUsuario_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RefUsuarioId" ColumnName="RefUsuarioId" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="RefPINAPIId" ColumnName="RefPINAPIId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="APPGPSModel.Store.APP_F_ListaSintomas" FunctionImportName="APP_F_ListaSintomas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APPGPSModel.APP_F_ListaSintomas_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sintomas" ColumnName="Sintomas" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="APP_P_CrearPINAPI" FunctionName="APPGPSModel.Store.APP_P_CrearPINAPI" />
+    <FunctionImportMapping FunctionImportName="APP_P_CrearPosicionamiento" FunctionName="APPGPSModel.Store.APP_P_CrearPosicionamiento" />
+    <FunctionImportMapping FunctionImportName="APP_P_CrearRegistrarUsuario" FunctionName="APPGPSModel.Store.APP_P_CrearRegistrarUsuario" />
+    <FunctionImportMapping FunctionImportName="APP_P_GuardarSintomasPorUsuario" FunctionName="APPGPSModel.Store.APP_P_GuardarSintomasPorUsuario" />
+  </EntityContainerMapping>
+</Mapping>
