@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HBModelStoreContainer" CdmEntityContainer="HBEntities">
+    <EntitySetMapping Name="Citas">
+      <EntityTypeMapping TypeName="HBModel.Cita">
+        <MappingFragment StoreEntitySet="Citas">
+          <ScalarProperty Name="IDCita" ColumnName="IDCita" />
+          <ScalarProperty Name="IDMedico" ColumnName="IDMedico" />
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudades">
+      <EntityTypeMapping TypeName="HBModel.Ciudade">
+        <MappingFragment StoreEntitySet="Ciudades">
+          <ScalarProperty Name="IDCiudad" ColumnName="IDCiudad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colaboradores">
+      <EntityTypeMapping TypeName="HBModel.Colaboradore">
+        <MappingFragment StoreEntitySet="Colaboradores">
+          <ScalarProperty Name="IDColaborador" ColumnName="IDColaborador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="TelPersonal" ColumnName="TelPersonal" />
+          <ScalarProperty Name="TelOficina" ColumnName="TelOficina" />
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpedientePacientes">
+      <EntityTypeMapping TypeName="HBModel.ExpedientePaciente">
+        <MappingFragment StoreEntitySet="ExpedientePaciente">
+          <ScalarProperty Name="IDExpediente" ColumnName="IDExpediente" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="ReaccionesAlergicas" ColumnName="ReaccionesAlergicas" />
+          <ScalarProperty Name="PresionArterial" ColumnName="PresionArterial" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nacionalidads">
+      <EntityTypeMapping TypeName="HBModel.Nacionalidad">
+        <MappingFragment StoreEntitySet="Nacionalidad">
+          <ScalarProperty Name="IDNacionalidad" ColumnName="IDNacionalidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacientes">
+      <EntityTypeMapping TypeName="HBModel.Paciente">
+        <MappingFragment StoreEntitySet="Pacientes">
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Identidad" ColumnName="Identidad" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="IDNacionalidad" ColumnName="IDNacionalidad" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Residencia" ColumnName="Residencia" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promociones">
+      <EntityTypeMapping TypeName="HBModel.Promocione">
+        <MappingFragment StoreEntitySet="Promociones">
+          <ScalarProperty Name="IDPromocion" ColumnName="IDPromocion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Residencias">
+      <EntityTypeMapping TypeName="HBModel.Residencia">
+        <MappingFragment StoreEntitySet="Residencias">
+          <ScalarProperty Name="IDResidencia" ColumnName="IDResidencia" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IDCiudad" ColumnName="IDCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicios">
+      <EntityTypeMapping TypeName="HBModel.Servicio">
+        <MappingFragment StoreEntitySet="Servicios">
+          <ScalarProperty Name="IDServicio" ColumnName="IDServicio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Recomendaciones" ColumnName="Recomendaciones" />
+          <ScalarProperty Name="Contraindicaciones" ColumnName="Contraindicaciones" />
+          <ScalarProperty Name="Advertencias" ColumnName="Advertencias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiciosEnPromocions">
+      <EntityTypeMapping TypeName="HBModel.ServiciosEnPromocion">
+        <MappingFragment StoreEntitySet="ServiciosEnPromocion">
+          <ScalarProperty Name="IDServiciosPromocion" ColumnName="IDServiciosPromocion" />
+          <ScalarProperty Name="PrecioFinal" ColumnName="PrecioFinal" />
+          <ScalarProperty Name="IDPromocion" ColumnName="IDPromocion" />
+          <ScalarProperty Name="IDServicio" ColumnName="IDServicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IDUsers" ColumnName="IDUsers" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Cotizaciones" ColumnName="Cotizaciones" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CitaEspecifica" FunctionName="HBModel.Store.CitaEspecifica">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.CitaEspecifica_Result">
+          <ScalarProperty Name="IDCita" ColumnName="IDCita" />
+          <ScalarProperty Name="IDMedico" ColumnName="IDMedico" />
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ColaboradorEspecifico" FunctionName="HBModel.Store.ColaboradorEspecifico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.ColaboradorEspecifico_Result">
+          <ScalarProperty Name="IDColaborador" ColumnName="IDColaborador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="TelPersonal" ColumnName="TelPersonal" />
+          <ScalarProperty Name="TelOficina" ColumnName="TelOficina" />
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CreatePacientes" FunctionName="HBModel.Store.CreatePacientes" />
+    <FunctionImportMapping FunctionImportName="CreateUser" FunctionName="HBModel.Store.CreateUser" />
+    <FunctionImportMapping FunctionImportName="getCitas" FunctionName="HBModel.Store.getCitas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getCitas_Result">
+          <ScalarProperty Name="IDCita" ColumnName="IDCita" />
+          <ScalarProperty Name="IDMedico" ColumnName="IDMedico" />
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getColaboradores" FunctionName="HBModel.Store.getColaboradores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getColaboradores_Result">
+          <ScalarProperty Name="IDColaborador" ColumnName="IDColaborador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="TelPersonal" ColumnName="TelPersonal" />
+          <ScalarProperty Name="TelOficina" ColumnName="TelOficina" />
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getExpediente" FunctionName="HBModel.Store.getExpediente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getExpediente_Result">
+          <ScalarProperty Name="IDExpediente" ColumnName="IDExpediente" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="ReaccionesAlergicas" ColumnName="ReaccionesAlergicas" />
+          <ScalarProperty Name="PresionArterial" ColumnName="PresionArterial" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getExpedientePaciente" FunctionName="HBModel.Store.getExpedientePaciente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getExpedientePaciente_Result">
+          <ScalarProperty Name="IDExpediente" ColumnName="IDExpediente" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="ReaccionesAlergicas" ColumnName="ReaccionesAlergicas" />
+          <ScalarProperty Name="PresionArterial" ColumnName="PresionArterial" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPacientes" FunctionName="HBModel.Store.getPacientes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getPacientes_Result">
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Identidad" ColumnName="Identidad" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="IDNacionalidad" ColumnName="IDNacionalidad" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Residencia" ColumnName="Residencia" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPromociones" FunctionName="HBModel.Store.getPromociones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getPromociones_Result">
+          <ScalarProperty Name="IDPromocion" ColumnName="IDPromocion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getServicios" FunctionName="HBModel.Store.getServicios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getServicios_Result">
+          <ScalarProperty Name="IDServicio" ColumnName="IDServicio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Recomendaciones" ColumnName="Recomendaciones" />
+          <ScalarProperty Name="Contraindicaciones" ColumnName="Contraindicaciones" />
+          <ScalarProperty Name="Advertencias" ColumnName="Advertencias" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getServiciosenPromocion" FunctionName="HBModel.Store.getServiciosenPromocion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getServiciosenPromocion_Result">
+          <ScalarProperty Name="IDServiciosPromocion" ColumnName="IDServiciosPromocion" />
+          <ScalarProperty Name="PrecioFinal" ColumnName="PrecioFinal" />
+          <ScalarProperty Name="IDPromocion" ColumnName="IDPromocion" />
+          <ScalarProperty Name="IDServicio" ColumnName="IDServicio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getUsers" FunctionName="HBModel.Store.getUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getUsers_Result">
+          <ScalarProperty Name="IDUsers" ColumnName="IDUsers" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Cotizaciones" ColumnName="Cotizaciones" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PacienteEspecifico" FunctionName="HBModel.Store.PacienteEspecifico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.PacienteEspecifico_Result">
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Identidad" ColumnName="Identidad" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="IDNacionalidad" ColumnName="IDNacionalidad" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Residencia" ColumnName="Residencia" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PromocionEspecifica" FunctionName="HBModel.Store.PromocionEspecifica">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.PromocionEspecifica_Result">
+          <ScalarProperty Name="IDPromocion" ColumnName="IDPromocion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ServicioEspecifico" FunctionName="HBModel.Store.ServicioEspecifico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.ServicioEspecifico_Result">
+          <ScalarProperty Name="IDServicio" ColumnName="IDServicio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Recomendaciones" ColumnName="Recomendaciones" />
+          <ScalarProperty Name="Contraindicaciones" ColumnName="Contraindicaciones" />
+          <ScalarProperty Name="Advertencias" ColumnName="Advertencias" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HBModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SPEspecifico" FunctionName="HBModel.Store.SPEspecifico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.SPEspecifico_Result">
+          <ScalarProperty Name="IDServiciosPromocion" ColumnName="IDServiciosPromocion" />
+          <ScalarProperty Name="PrecioFinal" ColumnName="PrecioFinal" />
+          <ScalarProperty Name="IDPromocion" ColumnName="IDPromocion" />
+          <ScalarProperty Name="IDServicio" ColumnName="IDServicio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserEspecifico" FunctionName="HBModel.Store.UserEspecifico">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.UserEspecifico_Result">
+          <ScalarProperty Name="IDUsers" ColumnName="IDUsers" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Cotizaciones" ColumnName="Cotizaciones" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getNacionalidad" FunctionName="HBModel.Store.getNacionalidad">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getNacionalidad_Result">
+          <ScalarProperty Name="IDNacionalidad" ColumnName="IDNacionalidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getCiudades" FunctionName="HBModel.Store.getCiudades">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getCiudades_Result">
+          <ScalarProperty Name="IDCiudad" ColumnName="IDCiudad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getResidenciasE" FunctionName="HBModel.Store.getResidenciasE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getResidenciasE_Result">
+          <ScalarProperty Name="IDResidencia" ColumnName="IDResidencia" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IDCiudad" ColumnName="IDCiudad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getResidencias" FunctionName="HBModel.Store.getResidencias">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getResidencias_Result">
+          <ScalarProperty Name="IDResidencia" ColumnName="IDResidencia" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IDCiudad" ColumnName="IDCiudad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Especialidades">
+      <EntityTypeMapping TypeName="HBModel.Especialidade">
+        <MappingFragment StoreEntitySet="Especialidades">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IDEspecialidad" ColumnName="IDEspecialidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicos">
+      <EntityTypeMapping TypeName="HBModel.Medico">
+        <MappingFragment StoreEntitySet="Medicos">
+          <ScalarProperty Name="Titulos" ColumnName="Titulos" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="IDEspecialidad" ColumnName="IDEspecialidad" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Sabado" ColumnName="Sabado" />
+          <ScalarProperty Name="Viernes" ColumnName="Viernes" />
+          <ScalarProperty Name="Jueves" ColumnName="Jueves" />
+          <ScalarProperty Name="Miercoles" ColumnName="Miercoles" />
+          <ScalarProperty Name="Martes" ColumnName="Martes" />
+          <ScalarProperty Name="Lunes" ColumnName="Lunes" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IDMedico" ColumnName="IDMedico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getEspecialidad" FunctionName="HBModel.Store.getEspecialidad">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getEspecialidad_Result">
+          <ScalarProperty Name="IDEspecialidad" ColumnName="IDEspecialidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getMedicos" FunctionName="HBModel.Store.getMedicos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HBModel.getMedicos_Result">
+          <ScalarProperty Name="IDMedico" ColumnName="IDMedico" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Lunes" ColumnName="Lunes" />
+          <ScalarProperty Name="Martes" ColumnName="Martes" />
+          <ScalarProperty Name="Miercoles" ColumnName="Miercoles" />
+          <ScalarProperty Name="Jueves" ColumnName="Jueves" />
+          <ScalarProperty Name="Viernes" ColumnName="Viernes" />
+          <ScalarProperty Name="Sabado" ColumnName="Sabado" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="IDEspecialidad" ColumnName="IDEspecialidad" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

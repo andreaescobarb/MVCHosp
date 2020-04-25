@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19afefcb954b4910afec70b5afc16f60" Name="Diagram1">
+        <EntityTypeShape EntityType="HBModel.C__MigrationHistory" Width="1.5" PointX="9.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.AspNetRole" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.AspNetUser" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Cita" Width="1.5" PointX="7.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Ciudade" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Colaboradore" Width="1.5" PointX="5.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Especialidade" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.ExpedientePaciente" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Medico" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Nacionalidad" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Paciente" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Promocione" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Residencia" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Servicio" Width="1.5" PointX="5.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.ServiciosEnPromocion" Width="1.5" PointX="8" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.User" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="HBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Colaboradores_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Medicos_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Pacientes_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Citas_Pacientes" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Pacientes_Ciudades" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Residencias_Ciudades" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Medicos_Especialidades" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_ExpedientePaciente_Pacientes" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Pacientes_Nacionalidad" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_Pacientes_Residencias" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_ServiciosEnPromocion_Promociones" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.FK_ServiciosEnPromocion_Servicios" ManuallyRouted="false" />
+        <AssociationConnector Association="HBModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

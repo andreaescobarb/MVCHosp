@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="IDCiudad" />
+    </Key>
+    <Property Name="IDCiudad" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="70" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Colaboradores">
+    <Key>
+      <PropertyRef Name="IdColaborador" />
+    </Key>
+    <Property Name="IdColaborador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TelPersonal" Type="int" Nullable="false" />
+    <Property Name="TelOficina" Type="int" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExpedientePaciente">
+    <Key>
+      <PropertyRef Name="IDExpediente" />
+    </Key>
+    <Property Name="IDPaciente" Type="int" />
+    <Property Name="IDExpediente" Type="int" Nullable="false" />
+    <Property Name="Peso" Type="int" />
+    <Property Name="ReaccionesAlergicas" Type="varchar" MaxLength="200" />
+    <Property Name="PresionArterial" Type="varchar" MaxLength="100" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Nacionalidades">
+    <Key>
+      <PropertyRef Name="IDNacionalidad" />
+    </Key>
+    <Property Name="IDNacionalidad" Type="int" Nullable="false" />
+    <Property Name="Nacionalidad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pacientes">
+    <Key>
+      <PropertyRef Name="IDPaciente" />
+    </Key>
+    <Property Name="IDPaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Apellido2" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Identidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDNacionalidad" Type="int" Nullable="false" />
+    <Property Name="Edad" Type="int" Nullable="false" />
+    <Property Name="Genero" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="CiudadResidencia" Type="int" />
+    <Property Name="Residencia" Type="int" />
+    <Property Name="IDUsers" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Promociones">
+    <Key>
+      <PropertyRef Name="IDPromocion" />
+    </Key>
+    <Property Name="IDPromocion" Type="int" Nullable="false" />
+    <Property Name="NombrePromocion" Type="varchar" MaxLength="70" />
+    <Property Name="Detalle" Type="varchar" MaxLength="100" />
+    <Property Name="FechaExpiracion" Type="date" />
+  </EntityType>
+  <EntityType Name="Residencia">
+    <Key>
+      <PropertyRef Name="IDResidencia" />
+    </Key>
+    <Property Name="IDResidencia" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IDCiudad" Type="int" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="IDServicio" />
+    </Key>
+    <Property Name="IDServicio" Type="int" Nullable="false" />
+    <Property Name="NombreServicio" Type="varchar" MaxLength="70" />
+    <Property Name="Precio" Type="float" />
+    <Property Name="Recomendaciones" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ServiciosEnPromocion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="IDPromocion" Type="int" Nullable="false" />
+    <Property Name="IDServicio" Type="int" Nullable="false" />
+    <Property Name="PrecioFinal" Type="float" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Correo" />
+    </Key>
+    <Property Name="IDUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rol" Type="int" Nullable="false" />
+    <Property Name="Cotizaciones" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ExpedientePaciente_Pacientes">
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="0..1" />
+    <End Role="ExpedientePaciente" Type="Self.ExpedientePaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="IDPaciente" />
+      </Principal>
+      <Dependent Role="ExpedientePaciente">
+        <PropertyRef Name="IDPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_Ciudades">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="0..1" />
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="IDCiudad" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="CiudadResidencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_Nacionalidades">
+    <End Role="Nacionalidades" Type="Self.Nacionalidades" Multiplicity="1" />
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nacionalidades">
+        <PropertyRef Name="IDNacionalidad" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="IDNacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_Residencia">
+    <End Role="Residencia" Type="Self.Residencia" Multiplicity="0..1" />
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Residencia">
+        <PropertyRef Name="IDResidencia" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="Residencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Correo" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="IDUsers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Residencia_Ciudades">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="0..1" />
+    <End Role="Residencia" Type="Self.Residencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="IDCiudad" />
+      </Principal>
+      <Dependent Role="Residencia">
+        <PropertyRef Name="IDCiudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiciosEnPromocion_Promociones">
+    <End Role="Promociones" Type="Self.Promociones" Multiplicity="1" />
+    <End Role="ServiciosEnPromocion" Type="Self.ServiciosEnPromocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promociones">
+        <PropertyRef Name="IDPromocion" />
+      </Principal>
+      <Dependent Role="ServiciosEnPromocion">
+        <PropertyRef Name="IDPromocion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiciosEnPromocion_Servicio">
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="1" />
+    <End Role="ServiciosEnPromocion" Type="Self.ServiciosEnPromocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="IDServicio" />
+      </Principal>
+      <Dependent Role="ServiciosEnPromocion">
+        <PropertyRef Name="IDServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="HBModelStoreContainer">
+    <EntitySet Name="Ciudades" EntityType="Self.Ciudades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colaboradores" EntityType="Self.Colaboradores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpedientePaciente" EntityType="Self.ExpedientePaciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nacionalidades" EntityType="Self.Nacionalidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promociones" EntityType="Self.Promociones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Residencia" EntityType="Self.Residencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiciosEnPromocion" EntityType="Self.ServiciosEnPromocion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ExpedientePaciente_Pacientes" Association="Self.FK_ExpedientePaciente_Pacientes">
+      <End Role="Pacientes" EntitySet="Pacientes" />
+      <End Role="ExpedientePaciente" EntitySet="ExpedientePaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_Ciudades" Association="Self.FK_Pacientes_Ciudades">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Pacientes" EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_Nacionalidades" Association="Self.FK_Pacientes_Nacionalidades">
+      <End Role="Nacionalidades" EntitySet="Nacionalidades" />
+      <End Role="Pacientes" EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_Residencia" Association="Self.FK_Pacientes_Residencia">
+      <End Role="Residencia" EntitySet="Residencia" />
+      <End Role="Pacientes" EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_Users" Association="Self.FK_Pacientes_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Pacientes" EntitySet="Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Residencia_Ciudades" Association="Self.FK_Residencia_Ciudades">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Residencia" EntitySet="Residencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiciosEnPromocion_Promociones" Association="Self.FK_ServiciosEnPromocion_Promociones">
+      <End Role="Promociones" EntitySet="Promociones" />
+      <End Role="ServiciosEnPromocion" EntitySet="ServiciosEnPromocion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiciosEnPromocion_Servicio" Association="Self.FK_ServiciosEnPromocion_Servicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="ServiciosEnPromocion" EntitySet="ServiciosEnPromocion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
